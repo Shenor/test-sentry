@@ -17,6 +17,7 @@
     "@quasar/extras": "^1.16.4",
     "@sentry/vue": "^7.99.0",
     "axios": "^1.2.1",
+    "live-server": "^0.8.0",
     "pinia": "^2.0.11",
     "quasar": "^2.8.0",
     "vue": "^3.2.29",

@@ -9,7 +9,7 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
 const { configure } = require('quasar/wrappers');
-
+// console.log(process.env);
 module.exports = configure(function (/* ctx */) {
   return {
     eslint: {
@@ -49,6 +49,11 @@ module.exports = configure(function (/* ctx */) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
     build: {
       sourcemap: true,
+      // sourcemapFile: '/static',
+      // emptyOutDir: true,
+
+      minify: true,
+
       target: {
         browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
         node: 'node20',
@@ -82,6 +87,10 @@ module.exports = configure(function (/* ctx */) {
             project: 'javascript-vue',
             release: {
               name: new Date().getTime(),
+            },
+            sourcemap: {
+              assets: './**',
+              ignore: ['./node_modules'],
             },
           },
         ],

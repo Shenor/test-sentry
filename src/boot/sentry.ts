@@ -5,6 +5,7 @@ export default boot(({ app }) => {
   Sentry.init({
     Vue: app,
     dsn: 'https://f3952747fdb31ca1d25cd7e5e47971bf@o4506671003074560.ingest.sentry.io/4506671005040640',
+    environment: process.env.NODE_ENV,
     integrations: [
       new Sentry.BrowserTracing({
         // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
@@ -18,6 +19,7 @@ export default boot(({ app }) => {
         blockAllMedia: false,
       }),
     ],
+    trackComponents: true,
     // Performance Monitoring
     tracesSampleRate: 1.0, //  Capture 100% of the transactions
     // Session Replay
